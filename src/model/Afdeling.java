@@ -1,6 +1,7 @@
 package model;
 
 public class Afdeling {
+    // atribuut
     private String afdelingsNaam;
     private String afdelingsPlaats;
 
@@ -14,21 +15,18 @@ public class Afdeling {
     }
 
     // getter, setter
-
-
     public String getAfdelingsNaam() {
         return afdelingsNaam;
     }
-
     public void setAfdelingsNaam(String afdelingsNaam) {
         this.afdelingsNaam = afdelingsNaam;
     }
-
     public String getAfdelingsPlaats() {
         return afdelingsPlaats;
     }
-
     public void setAfdelingsPlaats(String afdelingsPlaats) {
         this.afdelingsPlaats = afdelingsPlaats;
     }
+
+
 }

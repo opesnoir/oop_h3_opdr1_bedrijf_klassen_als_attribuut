@@ -13,24 +13,29 @@ public class Persoon {
     private Afdeling afdeling;
 
     // constructors
-
     public Persoon(String naam, String woonplaats, double maandSalaris, Afdeling afdeling) {
         this.naam = naam;
         this.woonplaats = woonplaats;
         setMaandSalaris(maandSalaris);
-        this.personeelsNummer = ++aantalPersonen;
         this.afdeling = afdeling;
+        this.personeelsNummer = ++aantalPersonen;
     }
-
     public Persoon(String naam) {
         this(naam, "onbekend", 0, new Afdeling());
         this.naam = naam;
     }
-
     public Persoon() {
         this("onbekend");
     }
 
+    // methoden
+    public double berekenJaarInkomen() {
+        return maandSalaris * AANTAL_MAANDEN_IN_EEN_JAAR;
+    }
+
+    public boolean heeftRechtOpBonus() {
+        return maandSalaris >= GRENSWAARDE_BONUS; //retourneert true als maandSalaris groter dan of gelijk aan GRENSWAARDE_BONUS is, anders retourneert het false
+    }
 
     // getters, setters
     public int getPersoneelsNummer() {
@@ -73,13 +78,6 @@ public class Persoon {
         }
     }
 
-    // methoden
-    public double berekenJaarInkomen() {
-        return maandSalaris * AANTAL_MAANDEN_IN_EEN_JAAR;
-    }
 
-    public boolean heeftRechtOpBonus() {
-        return maandSalaris >= GRENSWAARDE_BONUS; //retourneert true als maandSalaris groter dan of gelijk aan GRENSWAARDE_BONUS is, anders retourneert het false
-    }
 
 }
