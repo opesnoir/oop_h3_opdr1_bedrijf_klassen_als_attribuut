@@ -14,20 +14,23 @@ public class Persoon {
 
     // constructors
 
-    public Persoon(String naam, String woonplaats, double maandSalaris) {
+    public Persoon(String naam, String woonplaats, double maandSalaris, Afdeling afdeling) {
         this.naam = naam;
         this.woonplaats = woonplaats;
-        setMaandSalaris(maandSalaris); //zorgt dat de constructors geen negatief maandsalaris accepteren.
+        setMaandSalaris(maandSalaris);
         this.personeelsNummer = ++aantalPersonen;
+        this.afdeling = afdeling;
     }
 
     public Persoon(String naam) {
-        this(naam, "onbekend", 0);
+        this(naam, "onbekend", 0, new Afdeling());
+        this.naam = naam;
     }
 
     public Persoon() {
         this("onbekend");
     }
+
 
     // getters, setters
     public int getPersoneelsNummer() {
@@ -52,6 +55,14 @@ public class Persoon {
 
     public double getMaandSalaris() {
         return maandSalaris;
+    }
+
+    public Afdeling getAfdeling() {
+        return afdeling;
+    }
+
+    public void setAfdeling(Afdeling afdeling) {
+        this.afdeling = afdeling;
     }
 
     public void setMaandSalaris(double maandSalaris) {
